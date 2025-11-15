@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Dark Hidden Store</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            background: #ff1a1a;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            text-transform: uppercase;
+        }
+
+        /* Landing Section */
+        #landing {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #landing h1 {
+            font-size: 3.5rem;
+            color: #ff1a1a;
+            text-shadow: 0 0 10px #ff1a1a, 0 0 20px #ff1a1a;
+            animation: glitch 2s infinite;
+        }
+
+        #landing p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 20px 0;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background: #00ff88;
+            color: #0a0a0a;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px #00ff88;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px #00ff88;
+        }
+
+        /* Store Section */
+        #store {
+            padding: 80px 20px;
+            background: #1a1a1a;
+        }
+
+        #store h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #ff1a1a;
+            margin-bottom: 40px;
+            text-shadow: 0 0 10px #ff1a1a;
+        }
+
+        .tool-table {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .tool-card {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 0 15px rgba(255, 26, 26, 0.3);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .tool-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .tool-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .tool-card p {
+            font-size: 1rem;
+            color: #00ff88;
+            margin-bottom: 15px;
+        }
+
+        /* Buy/Sell Sections */
+        .buy-sell-section {
+            padding: 60px 20px;
+            background: #0a0a0a;
+            text-align: center;
+        }
+
+        .buy-sell-section h2 {
+            font-size: 2.5rem;
+            color: #ff1a1a;
+            margin-bottom: 30px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 26, 26, 0.3);
+        }
+
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #1a1a1a;
+            border: 1px solid #ff1a1a;
+            color: #e0e0e0;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            padding: 12px 24px;
+            background: #00ff88;
+            color: #0a0a0a;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .form-container button:hover {
+            box-shadow: 0 0 20px #00ff88;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #0a0a0a;
+            border-top: 1px solid #ff1a1a;
+        }
+
+        footer a {
+            color: #00ff88;
+            text-decoration: none;
+        }
+
+        /* Glitch Animation */
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(2px, -2px); }
+            60% { transform: translate(-2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #landing h1 {
+                font-size: 2rem;
+            }
+
+            #landing p {
+                font-size: 1rem;
+            }
+
+            .tool-table {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Ethical Disclaimer -->
+    <div class="disclaimer">
+        ⚠️ For ETHICAL USE ONLY. Illegal activities strictly prohibited.
+    </div>
+
+    <!-- Landing Section -->
+    <section id="landing">
+        <h1>Team Dark Hidden Store</h1>
+        <p>🔥 Unleash your ethical hacking skills with our elite tools & guides. Trusted by thousands. Dare to dominate! 😈</p>
+        <a href="https://t.me/hiddenproofsonly" target="_blank" class="btn">Proofs on Telegram</a>
+        <a href="https://chat.whatsapp.com/HWQWkngflMxK9wc5LOMobb?mode=wwt" target="_blank" class="btn" style="margin: 10px;">Free Hacking Guides (WhatsApp)</a>
+        <a href="https://www.instagram.com/dark_exploit_" target="_blank" class="btn">Follow @dark_exploit_</a>
+        <a href="#store" class="btn" style="margin-top: 20px;">Enter Store</a>
+    </section>
+
+    <!-- Store Section -->
+    <section id="store">
+        <h2>🔒 Elite Tools Await You</h2>
+        <div class="tool-table">
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=WhatsApp+Ban" alt="WhatsApp Ban">
+                <h3>WhatsApp Ban Method (Legal)</h3>
+                <p>199 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20WHATSAPP%20BAN%20METHOD" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=WhatsApp+Unban" alt="WhatsApp Unban">
+                <h3>WhatsApp Unban</h3>
+                <p>199 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20WHATSAPP%20UNBAN" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=Telegram+Username" alt="Telegram Username">
+                <h3>Telegram Username to Number</h3>
+                <p>100 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20TELEGRAM%20USERNAME%20TO%20NUMBER" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=Number+Info" alt="Number Info">
+                <h3>Number to Info with Location</h3>
+                <p>199 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20NUMBER%20TO%20INFO%20WITH%20LOCATION" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=RAT" alt="RAT">
+                <h3>RAT</h3>
+                <p>299 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20RAT" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=RAT+Combo" alt="RAT Combo">
+                <h3>20+ RATs Combo Pack</h3>
+                <p>499 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%2020%2B%20RATS%20COMBO%20PACK" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=Instagram+Followers" alt="Instagram Followers">
+                <h3>Instagram Followers Panel</h3>
+                <p>100 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20INSTAGRAM%20FOLLOWERS%20PANEL" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=Free+Fire+Panel" alt="Free Fire Panel">
+                <h3>Free Fire Panel</h3>
+                <p>100 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20FREE%20FIRE%20PANEL" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=Hacking+Course" alt="Hacking Course">
+                <h3>Hacking Course</h3>
+                <p>100 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20HACKING%20COURSE" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=SMS+Call+Bomber" alt="SMS Call Bomber">
+                <h3>Super Fast SMS + Call Bomber</h3>
+                <p>70 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20SUPER%20FAST%20SMS%20%2B%20CALL%20BOMBER" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=Hacking+Bot" alt="Hacking Bot">
+                <h3>Create Your Own Hacking Telegram Bot</h3>
+                <p>149 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20CREATE%20YOUR%20OWN%20HACKING%20TELEGRAM%20BOT" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=CC+Course" alt="CC Course">
+                <h3>CC Course</h3>
+                <p>149 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20CC%20COURSE" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=Facebook+RAT" alt="Facebook RAT">
+                <h3>Facebook Hack RAT</h3>
+                <p>100 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20FACEBOOK%20HACK%20RAT" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=Instagram+RAT" alt="Instagram RAT">
+                <h3>Instagram Hack RAT</h3>
+                <p>100 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20INSTAGRAM%20HACK%20RAT" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=SMS+Bypass" alt="SMS Bypass">
+                <h3>SMS Bypass</h3>
+                <p>149 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20SMS%20BYPASS" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=Deep+Fake" alt="Deep Fake">
+                <h3>Deep Fake & Clothes Remover</h3>
+                <p>50 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20DEEP%20FAKE%20%26%20CLOTHES%20REMOVER" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=FF+ID" alt="FF ID">
+                <h3>FF ID Buy and Sell</h3>
+                <p>Your Amount</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20FF%20ID%20BUY%20AND%20SELL" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=Premium+Subscriptions" alt="Premium Subscriptions">
+                <h3>Premium Subscriptions</h3>
+                <p>Your Choice</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20PREMIUM%20SUBSCRIPTIONS" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=Fake+Payment" alt="Fake Payment">
+                <h3>Fake Payment with Notification</h3>
+                <p>100 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20FAKE%20PAYMENT%20WITH%20NOTIFICATION" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=Instagram+Ban" alt="Instagram Ban">
+                <h3>Instagram Ban</h3>
+                <p>100 - 149 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20INSTAGRAM%20BAN" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=18+Leaked+Video" alt="18+ Leaked Video">
+                <h3>18+ Leaked Video Group</h3>
+                <p>100 INR</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%2018%2B%20LEAKED%20VIDEO%20GROUP" target="_blank" class="btn">Buy Now</a>
+            </div>
+            <div class="tool-card">
+                <img src="https://via.placeholder.com/300x150?text=More+Services" alt="More Services">
+                <h3>More Services...</h3>
+                <p>Contact for Details</p>
+                <a href="https://wa.me/+919836942455?text=HI%20I%20WANT%20TO%20BUY%20MORE%20SERVICES" target="_blank" class="btn">Contact Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Buy/Sell Section -->
+    <section id="youtube" class="buy-sell-section">
+        <h2>Buy or Sell YouTube Channel</h2>
+        <div class="form-container">
+            <h3>Contact Us</h3>
+            <input type="text" id="yt-link" placeholder="YouTube Channel Link" required>
+            <input type="text" id="yt-age" placeholder="Account Age (e.g., 1 year)" required>
+            <select id="yt-monetized" required>
+                <option value="" disabled selected>Monetized? (Y/N)</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <input type="text" id="yt-price" placeholder="Your Price (INR)" required>
+            <button onclick="submitForm('youtube', 'buy')">Buy YouTube Channel</button>
+            <button onclick="submitForm('youtube', 'sell')">Sell YouTube Channel</button>
+        </div>
+    </section>
+
+    <!-- Instagram Buy/Sell Section -->
+    <section id="instagram" class="buy-sell-section">
+        <h2>Buy or Sell Instagram Account</h2>
+        <div class="form-container">
+            <h3>Contact Us</h3>
+            <input type="text" id="ig-link" placeholder="Instagram Profile Link" required>
+            <input type="text" id="ig-age" placeholder="Account Age (e.g., 1 year)" required>
+            <input type="text" id="ig-followers" placeholder="Followers Count" required>
+            <input type="text" id="ig-price" placeholder="Your Price (INR)" required>
+            <button onclick="submitForm('instagram', 'buy')">Buy Instagram Account</button>
+            <button onclick="submitForm('instagram', 'sell')">Sell Instagram Account</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Team Dark Hidden Store &copy; 2025 | For Ethical Use Only</p>
+        <p>Follow us: <a href="https://www.instagram.com/dark_exploit_">@dark_exploit_</a></p>
+        <p>Contact: <a href="https://wa.me/+919836942455">+91 98369 42455</a></p>
+    </footer>
+
+    <!-- JavaScript for Form Submission -->
+    <script>
+        function submitForm(type, action) {
+            let message = '';
+            if (type === 'youtube') {
+                const link = document.getElementById('yt-link').value;
+                const age = document.getElementById('yt-age').value;
+                const monetized = document.getElementById('yt-monetized').value;
+                const price = document.getElementById('yt-price').value;
+                if (!link || !age || !monetized || !price) {
+                    alert('Please fill all fields!');
+                    return;
+                }
+                message = `HI I WANT TO ${action.toUpperCase()} YOUTUBE CHANNEL\nAbout my channel:\nYouTube Link: ${link}\nAccount Age: ${age}\nMonetized: ${monetized}\nYour Price: ${price} INR`;
+            } else if (type === 'instagram') {
+                const link = document.getElementById('ig-link').value;
+                const age = document.getElementById('ig-age').value;
+                const followers = document.getElementById('ig-followers').value;
+                const price = document.getElementById('ig-price').value;
+                if (!link || !age || !followers || !price) {
+                    alert('Please fill all fields!');
+                    return;
+                }
+                message = `HI I WANT TO ${action.toUpperCase()} INSTAGRAM ACCOUNT\nAbout my account:\nInstagram Link: ${link}\nAccount Age: ${age}\nFollowers: ${followers}\nYour Price: ${price} INR`;
+            }
+            window.open(`https://wa.me/+919836942455?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+                  </html>
